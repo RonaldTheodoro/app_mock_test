@@ -58,3 +58,8 @@ def test_settings_db_password_homolog(settings):
 
 def test_settings_db_database_homolog(settings):
     assert settings.db_database == 'db_homolog'
+
+
+def test_settings_db_url_homolog(settings):
+    db_url = 'mysql://user_homolog:homolog_token@localhost:3699/db_homolog'
+    assert settings.db_url == db_url

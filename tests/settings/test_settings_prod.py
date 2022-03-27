@@ -58,3 +58,8 @@ def test_settings_db_password_prod(settings):
 
 def test_settings_db_database_prod(settings):
     assert settings.db_database == 'db_prod'
+
+
+def test_settings_db_url_prod(settings):
+    db_url = 'mysql://user_prod:prod_token@localhost:3699/db_prod'
+    assert settings.db_url == db_url

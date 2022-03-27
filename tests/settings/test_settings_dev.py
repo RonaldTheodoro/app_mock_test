@@ -58,3 +58,8 @@ def test_settings_db_password_dev(settings):
 
 def test_settings_db_database_dev(settings):
     assert settings.db_database == 'db_dev'
+
+
+def test_settings_db_url_dev(settings):
+    db_url = 'mysql://user_dev:dev_token@localhost:3699/db_dev'
+    assert settings.db_url == db_url
