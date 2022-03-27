@@ -52,5 +52,9 @@ def test_settings_db_user_homolog(settings):
     assert settings.db_user == 'user_homolog'
 
 
+def test_settings_db_password_homolog(settings):
+    assert settings.db_password == 'homolog_token'
+
+
 def test_settings_db_database_homolog(settings):
     assert settings.db_database == 'db_homolog'

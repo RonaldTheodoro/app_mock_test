@@ -52,5 +52,9 @@ def test_settings_db_user_local(settings):
     assert settings.db_user == 'user_dev'
 
 
+def test_settings_db_password_local(settings):
+    assert settings.db_password == 'dev_token'
+
+
 def test_settings_db_database_local(settings):
     assert settings.db_database == 'db_dev'

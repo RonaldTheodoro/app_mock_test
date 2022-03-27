@@ -52,5 +52,9 @@ def test_settings_db_user_prod(settings):
     assert settings.db_user == 'user_prod'
 
 
+def test_settings_db_password_prod(settings):
+    assert settings.db_password == 'prod_token'
+
+
 def test_settings_db_database_prod(settings):
     assert settings.db_database == 'db_prod'
