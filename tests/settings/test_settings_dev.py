@@ -18,7 +18,7 @@ def test_settings_stage_is_equal_dev(settings):
 
 def test_settings_stage_dev_is_not_local(settings):
     assert not settings.is_local
-    
+
 
 def test_settings_stage_is_dev(settings):
     assert settings.is_dev
