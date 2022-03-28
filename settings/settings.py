@@ -14,6 +14,9 @@ class Settings:
     STAGE = config('STAGE', cast=Choices(['local', 'dev', 'homolog', 'prod']))
     BASE_DIR = pathlib.Path(__file__).parent.parent
 
+    CHROMIUM_EXECUTABLE = '/usr/bin/chromium-browser'
+    FIREFOX_EXECUTABLE = '/usr/bin/firefox'
+
     @property
     def stage_name(self):
         return 'dev' if self.STAGE == 'local' else self.STAGE
@@ -68,18 +71,10 @@ class Settings:
         return f'mysql://{user}:{password}@{host}:{port}/{database}'
 
     @property
-    def chromium_executable(self):
-        return '/usr/bin/chromium-browser'
-
-    @property
     def chromedriver(self):
         if self.is_aws:
             return '/usr/bin/chromedriver'
         return str(pathlib.Path.home() / '.local/bin/chromedriver')
-
-    @property
-    def firefox_executable(self):
-        return '/usr/bin/firefox'
 
     @property
     def geckodriver(self):

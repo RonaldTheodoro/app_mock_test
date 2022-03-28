@@ -71,14 +71,6 @@ def test_settings_chromedriver_local(settings):
     assert settings.chromedriver == path
 
 
-def test_settings_chromium_executable_local(settings):
-    assert settings.chromium_executable == '/usr/bin/chromium-browser'
-
-
 def test_settings_geckodriver_local(settings):
     path = str(pathlib.Path.home() / '.local/bin/geckodriver')
     assert settings.geckodriver == path
-
-
-def test_settings_firefox_executable_local(settings):
-    assert settings.firefox_executable == '/usr/bin/firefox'
