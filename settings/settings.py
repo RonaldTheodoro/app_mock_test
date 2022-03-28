@@ -68,10 +68,18 @@ class Settings:
         return f'mysql://{user}:{password}@{host}:{port}/{database}'
 
     @property
+    def chromium_executable(self):
+        return '/usr/bin/chromium-browser'
+
+    @property
     def chromedriver(self):
         if self.is_aws:
             return '/usr/bin/chromedriver'
         return str(pathlib.Path.home() / '.local/bin/chromedriver')
+
+    @property
+    def firefox_executable(self):
+        return '/usr/bin/firefox'
 
     @property
     def geckodriver(self):

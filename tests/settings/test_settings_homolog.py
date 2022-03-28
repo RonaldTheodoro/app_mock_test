@@ -69,5 +69,13 @@ def test_settings_chromedriver_homolog(settings):
     assert settings.chromedriver == '/usr/bin/chromedriver'
 
 
+def test_settings_chromium_executable_homolog(settings):
+    assert settings.chromium_executable == '/usr/bin/chromium-browser'
+
+
 def test_settings_geckodriver_homolog(settings):
     assert settings.geckodriver == '/usr/bin/geckodriver'
+
+
+def test_settings_firefox_executable_homolog(settings):
+    assert settings.firefox_executable == '/usr/bin/firefox'
