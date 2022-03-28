@@ -66,3 +66,15 @@ class Settings:
         password = self.db_password
         database = self.db_database
         return f'mysql://{user}:{password}@{host}:{port}/{database}'
+
+    @property
+    def chromedriver(self):
+        if self.is_aws:
+            return '/usr/bin/chromedriver'
+        return str(pathlib.Path.home() / '.local/bin/chromedriver')
+
+    @property
+    def geckodriver(self):
+        if self.is_aws:
+            return '/usr/bin/geckodriver'
+        return str(pathlib.Path.home() / '.local/bin/geckodriver')

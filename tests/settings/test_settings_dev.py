@@ -1,3 +1,4 @@
+import pathlib
 from unittest import mock
 
 import pytest
@@ -63,3 +64,11 @@ def test_settings_db_database_dev(settings):
 def test_settings_db_url_dev(settings):
     db_url = 'mysql://user_dev:dev_token@localhost:3699/db_dev'
     assert settings.db_url == db_url
+
+
+def test_settings_chromedriver_dev(settings):
+    assert settings.chromedriver == '/usr/bin/chromedriver'
+
+
+def test_settings_geckodriver_dev(settings):
+    assert settings.geckodriver == '/usr/bin/geckodriver'

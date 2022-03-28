@@ -63,3 +63,11 @@ def test_settings_db_database_prod(settings):
 def test_settings_db_url_prod(settings):
     db_url = 'mysql://user_prod:prod_token@localhost:3699/db_prod'
     assert settings.db_url == db_url
+
+
+def test_settings_chromedriver_prod(settings):
+    assert settings.chromedriver == '/usr/bin/chromedriver'
+
+
+def test_settings_geckodriver_prod(settings):
+    assert settings.geckodriver == '/usr/bin/geckodriver'

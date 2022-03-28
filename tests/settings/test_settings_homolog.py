@@ -63,3 +63,11 @@ def test_settings_db_database_homolog(settings):
 def test_settings_db_url_homolog(settings):
     db_url = 'mysql://user_homolog:homolog_token@localhost:3699/db_homolog'
     assert settings.db_url == db_url
+
+
+def test_settings_chromedriver_homolog(settings):
+    assert settings.chromedriver == '/usr/bin/chromedriver'
+
+
+def test_settings_geckodriver_homolog(settings):
+    assert settings.geckodriver == '/usr/bin/geckodriver'
